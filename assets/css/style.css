@@ -1,0 +1,46 @@
+body {
+    background-color: blueviolet;
+}
+
+.vinyl {
+    width: 300px;
+    
+}
+
+.cover {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+
+.disque {
+    position: relative;
+    display: inline-block;
+    animation: turn 4s infinite linear ;
+}
+
+ul {
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@keyframes turn {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

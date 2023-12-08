@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/JavaScript/app.js"></script>
+    <script src="assets/JavaScript/app.js" defer></script>
     <title>Page d'accueil - Micky Music</title>
 </head>
 
@@ -27,13 +27,15 @@
     </header>
     <h1>Page d'accueil</h1>
     <div class="page">
-        <div class="disque">
+        <div class="disque pause">
             <img class="vinyl" src="assets/pictures/vinyl.png" alt="disque_vinyl">
             <img class="cover" src="assets/pictures/rde.jfif" alt="cover_rde">
         </div>
     </div>
-    <div class="div2">
+    <div class="play">
+        <button id="btnplay">Play</button>
     </div>
+    <audio src="assets/music/Supernova.mp3" id="audio"></audio>
 </body>
 
 </html>

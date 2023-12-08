@@ -1,3 +1,21 @@
+
+const disque = document.querySelector(".disque");
+const btnplay = document.getElementById("btnplay");
+const audio = document.getElementById("audio")
+
+btnplay.addEventListener("click",()=>{
+    disque.classList.toggle("pause")
+
+    if (disque.classList.contains("pause")){
+        btnplay.textContent ="Play";
+        audio.pause();
+    }else{
+        btnplay.textContent = "Pause";
+        audio.play();
+    }
+});
+
+/*
 console.log("Hello FDP");
 
 const prenom = "Enzo";
@@ -12,7 +30,7 @@ console.log(boutsdebave[1]);
 console.log(sac.skills);
 
 boutsdebave.forEach(
-    boutdebave => {
+    boutdebave => {  
         console.log(`Bonjour ${boutdebave}`)
     }
 );
@@ -30,7 +48,6 @@ function calcul_age(){
     }
 }
 
-/*
 variante de if 
 age < 18 ? console.log(`Casse toi con que ti es`) : console.log(`Viens la mon grand`)
 */
@@ -43,3 +60,5 @@ const calcul_age2 = ()=>{
 
 calcul_age2();
 */
+
+

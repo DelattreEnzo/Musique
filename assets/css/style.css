@@ -42,6 +42,12 @@ ul {
     list-style: none;
 }
 
+.play{
+    display: flex;
+    justify-content: center;
+    
+}
+
 @keyframes turn {
     0% {
         transform: rotate(0deg);
@@ -50,4 +56,8 @@ ul {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.pause{
+    animation-play-state: paused;
 }

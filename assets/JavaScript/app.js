@@ -1,19 +1,61 @@
-
+const btnliste = document.getElementById("liste");
+const btncontact = document.getElementById("contact");
 const disque = document.querySelector(".disque");
 const btnplay = document.getElementById("btnplay");
-const audio = document.getElementById("audio")
+const audio = document.getElementById("audio");
+const playlist = document.querySelector(".playlist ul");
+const musiques = [
+  {
+    nom: "La route des étoiles",
+    lien: "assets/music/La route des étoiles.mp3",
+  },
+  {
+    nom: "La route des étoiles",
+    lien: "assets/music/La route des étoiles.mp3",
+  },
+  {
+    nom: "La route des étoiles",
+    lien: "assets/music/La route des étoiles.mp3",
+  },
+  {
+    nom: "La route des étoiles",
+    lien: "assets/music/La route des étoiles.mp3",
+  },
+  {
+    nom: "La route des étoiles",
+    lien: "assets/music/La route des étoiles.mp3",
+  },
+  {
+    nom: "La route des étoiles",
+    lien: "assets/music/La route des étoiles.mp3",
+  },
+  {
+    nom: "La route des étoiles",
+    lien: "assets/music/La route des étoiles.mp3",
+  },
+  {
+    nom: "La route des étoiles",
+    lien: "assets/music/La route des étoiles.mp3",
+  },
+  {
+    nom: "La route des étoiles",
+    lien: "assets/music/La route des étoiles.mp3",
+  },
+];
 
-btnplay.addEventListener("click",()=>{
-    disque.classList.toggle("pause")
+btnplay.addEventListener("click", () => {
+  disque.classList.toggle("pause");
 
-    if (disque.classList.contains("pause")){
-        btnplay.textContent ="Play";
-        audio.pause();
-    }else{
-        btnplay.textContent = "Pause";
-        audio.play();
-    }
+  if (disque.classList.contains("pause")) {
+    btnplay.textContent = "Play";
+    audio.pause();
+  } else {
+    btnplay.textContent = "Pause";
+    audio.play();
+  }
 });
+
+playlist.btnliste.addEventListener("click", () => {});
 
 /*
 console.log("Hello FDP");
@@ -60,5 +102,3 @@ const calcul_age2 = ()=>{
 
 calcul_age2();
 */
-
-

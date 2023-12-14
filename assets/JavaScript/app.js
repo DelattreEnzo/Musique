@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 btnplay.addEventListener("click", () => {
+  disque.classList.toggle("pause");
   if (disque.classList.contains("pause")) {
     btnplay.textContent = "Play";
     audio.pause();
@@ -85,7 +86,6 @@ btnplay.addEventListener("click", () => {
     btnplay.textContent = "Pause";
     audio.play();
   }
-  disque.classList.toggle("pause");
 });
 
 btnliste.addEventListener("click", () => {

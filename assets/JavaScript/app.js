@@ -6,40 +6,48 @@ const audio = document.getElementById("audio");
 const playlist = document.querySelector(".playlist ul");
 const musiques = [
   {
-    nom: "La route des étoiles",
+    nom: "Micky - La route des étoiles",
     lien: "assets/music/La route des étoiles.mp3",
   },
   {
-    nom: "La route des étoiles",
-    lien: "assets/music/La route des étoiles.mp3",
+    nom: "Micky - Dantesque",
+    lien: "assets/music/Dantesque.mp3",
   },
   {
-    nom: "La route des étoiles",
-    lien: "assets/music/La route des étoiles.mp3",
+    nom: "Micky - Lvl up",
+    lien: "assets/music/Lvl up.mp3",
   },
   {
-    nom: "La route des étoiles",
-    lien: "assets/music/La route des étoiles.mp3",
+    nom: "Micky - Debranlax",
+    lien: "assets/music/Debranlax.mp3",
   },
   {
-    nom: "La route des étoiles",
-    lien: "assets/music/La route des étoiles.mp3",
+    nom: "Micky - Face à moi même",
+    lien: "assets/music/Face à moi même.mp3",
   },
   {
-    nom: "La route des étoiles",
-    lien: "assets/music/La route des étoiles.mp3",
+    nom: "Micky - Moonlight",
+    lien: "assets/music/Moonlight.mp3",
   },
   {
-    nom: "La route des étoiles",
-    lien: "assets/music/La route des étoiles.mp3",
+    nom: "Micky - Supernova",
+    lien: "assets/music/Supernova.mp3",
   },
   {
-    nom: "La route des étoiles",
-    lien: "assets/music/La route des étoiles.mp3",
+    nom: "Micky - APOCALYPSE (feat. Red B)",
+    lien: "assets/music/APOCALYSPE (feat. Red B).mp3",
   },
   {
-    nom: "La route des étoiles",
-    lien: "assets/music/La route des étoiles.mp3",
+    nom: "Angèle - Saiyan",
+    lien: "assets/music/Angèle - Saiyan [IA] (prod. Lnkhey).mp3",
+  },
+  {
+    nom: "Boblennon - La chanson du Pyro-Barbare !",
+    lien: "assets/music/La chanson du Pyro-Barbare ! par Bob Lennon [FantaBobGames].mp3",
+  },
+  {
+    nom: "Tonus - La Bite a Dudule",
+    lien: "assets/music/La Bite a Dudule.mp3",
   },
 ];
 

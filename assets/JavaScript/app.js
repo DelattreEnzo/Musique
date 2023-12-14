@@ -3,57 +3,81 @@ const btncontact = document.getElementById("contact");
 const disque = document.querySelector(".disque");
 const btnplay = document.getElementById("btnplay");
 const audio = document.getElementById("audio");
-const playlist = document.querySelector(".playlist ul");
+const cover = document.querySelector(".cover");
+const listmusic = document.querySelector(".listmusic");
+const playlist = document.getElementById("playlist");
+let playlistVisible = false;
 const musiques = [
   {
     nom: "Micky - La route des étoiles",
     lien: "assets/music/La route des étoiles.mp3",
+    cover: "assets/pictures/rde.jfif",
   },
   {
     nom: "Micky - Dantesque",
     lien: "assets/music/Dantesque.mp3",
+    cover: "assets/pictures/rde.jfif",
   },
   {
     nom: "Micky - Lvl up",
     lien: "assets/music/Lvl up.mp3",
+    cover: "assets/pictures/rde.jfif",
   },
   {
     nom: "Micky - Debranlax",
     lien: "assets/music/Debranlax.mp3",
+    cover: "assets/pictures/rde.jfif",
   },
   {
     nom: "Micky - Face à moi même",
     lien: "assets/music/Face à moi même.mp3",
+    cover: "assets/pictures/rde.jfif",
   },
   {
     nom: "Micky - Moonlight",
     lien: "assets/music/Moonlight.mp3",
+    cover: "assets/pictures/rde.jfif",
   },
   {
     nom: "Micky - Supernova",
     lien: "assets/music/Supernova.mp3",
+    cover: "assets/pictures/rde.jfif",
   },
   {
     nom: "Micky - APOCALYPSE (feat. Red B)",
     lien: "assets/music/APOCALYSPE (feat. Red B).mp3",
+    cover: "assets/pictures/rde.jfif",
   },
   {
     nom: "Angèle - Saiyan",
     lien: "assets/music/Angèle - Saiyan [IA] (prod. Lnkhey).mp3",
+    cover: "assets/pictures/Angèle - Saiyan.jpg",
   },
   {
     nom: "Boblennon - La chanson du Pyro-Barbare !",
     lien: "assets/music/La chanson du Pyro-Barbare ! par Bob Lennon [FantaBobGames].mp3",
+    cover: "assets/pictures/Boblennon - La chanson du Pyro-Barbare.jpg",
   },
   {
-    nom: "Tonus - La Bite a Dudule",
+    nom: "Tonus - La Bite à Dudule",
     lien: "assets/music/La Bite a Dudule.mp3",
+    cover: "assets/pictures/Tonus - La Bite à Dudule.jpg",
   },
 ];
 
-btnplay.addEventListener("click", () => {
-  disque.classList.toggle("pause");
+document.addEventListener("DOMContentLoaded", () => {
+  musiques.forEach((musique) => {
+    const liElement = document.createElement("li");
+    liElement.textContent = musique.nom;
+    liElement.addEventListener("click", () => {
+      audio.src = musique.lien;
+      cover.src = musique.cover;
+    });
+    listmusic.appendChild(liElement);
+  });
+});
 
+btnplay.addEventListener("click", () => {
   if (disque.classList.contains("pause")) {
     btnplay.textContent = "Play";
     audio.pause();
@@ -61,9 +85,17 @@ btnplay.addEventListener("click", () => {
     btnplay.textContent = "Pause";
     audio.play();
   }
+  disque.classList.toggle("pause");
 });
 
-playlist.btnliste.addEventListener("click", () => {});
+btnliste.addEventListener("click", () => {
+  if (playlistVisible) {
+    playlist.style.display = "none";
+  } else {
+    playlist.style.display = "block";
+  }
+  playlistVisible = !playlistVisible;
+});
 
 /*
 console.log("Hello FDP");

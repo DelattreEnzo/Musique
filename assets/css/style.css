@@ -33,7 +33,7 @@ h1 {
     justify-content: center;
 }
 
-ul {
+.navigation {
     display: flex;
     gap: 10px;
     justify-content: space-around;
@@ -60,4 +60,14 @@ ul {
 
 .pause{
     animation-play-state: paused;
+}
+
+#playlist{
+    display: none;
+    background-color: blue;
+}
+
+.listmusic {
+    gap: 10px;
+    list-style: none;
 }

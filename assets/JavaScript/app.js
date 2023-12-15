@@ -65,16 +65,14 @@ const musiques = [
   },
 ];
 
-document.addEventListener("DOMContentLoaded", () => {
-  musiques.forEach((musique) => {
-    const liElement = document.createElement("li");
-    liElement.textContent = musique.nom;
-    liElement.addEventListener("click", () => {
-      audio.src = musique.lien;
-      cover.src = musique.cover;
-    });
-    listmusic.appendChild(liElement);
+musiques.forEach((musique) => {
+  const liElement = document.createElement("li");
+  liElement.textContent = musique.nom;
+  liElement.addEventListener("click", () => {
+    audio.src = musique.lien;
+    cover.src = musique.cover;
   });
+  listmusic.appendChild(liElement);
 });
 
 btnplay.addEventListener("click", () => {

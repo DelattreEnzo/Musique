@@ -1,5 +1,7 @@
 body {
-    background-color: blueviolet;
+    background-image: url('https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg');
+    background-size: cover;
+    color: white;
 }
 
 .vinyl {
@@ -64,7 +66,8 @@ h1 {
 
 #playlist{
     display: none;
-    background-color: blue;
+    background-color: rgba(0, 0, 255, 0.2);
+    text-align: center;
 }
 
 .listmusic {

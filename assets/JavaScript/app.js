@@ -2,10 +2,13 @@ const btnliste = document.getElementById("liste");
 const btncontact = document.getElementById("contact");
 const disque = document.querySelector(".disque");
 const btnplay = document.getElementById("btnplay");
+const imgplay = document.querySelector(".play_pause");
 const audio = document.getElementById("audio");
 const cover = document.querySelector(".cover");
 const listmusic = document.querySelector(".listmusic");
 const playlist = document.getElementById("playlist");
+//const analyzer = new Tone.Analyser("waveform");
+//const audioSource = new Tone.MediaElementSource(audio);
 let playlistVisible = false;
 const musiques = [
   {
@@ -75,14 +78,20 @@ musiques.forEach((musique) => {
   listmusic.appendChild(liElement);
 });
 
+//audioSource.connect(analyzer);
+
 btnplay.addEventListener("click", () => {
   disque.classList.toggle("pause");
   if (disque.classList.contains("pause")) {
-    btnplay.textContent = "Play";
+    imgplay.src = "assets/pictures/bouton-jouer.png";
     audio.pause();
   } else {
-    btnplay.textContent = "Pause";
+    imgplay.src = "assets/pictures/bouton-pause.png";
     audio.play();
+    /*analyzer.on("change", (bpm) => {
+      console.log("BPM:", bpm);
+    });
+    Tone.Transport.start();*/
   }
 });
 

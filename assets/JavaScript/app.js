@@ -1,93 +1,78 @@
 const btnliste = document.getElementById("liste");
 const btncontact = document.getElementById("contact");
 const disque = document.querySelector(".disque");
+const bras = document.querySelector(".bras");
 const btnplay = document.getElementById("btnplay");
 const imgplay = document.querySelector(".play_pause");
 const audio = document.getElementById("audio");
 const cover = document.querySelector(".cover");
 const listmusic = document.querySelector(".listmusic");
 const playlist = document.getElementById("playlist");
+//bug mais a utiliser pour capturer le bpm de la musique
 //const analyzer = new Tone.Analyser("waveform");
 //const audioSource = new Tone.MediaElementSource(audio);
 let playlistVisible = false;
-const musiques = [
-  {
-    nom: "Micky - La route des étoiles",
-    lien: "assets/music/La route des étoiles.mp3",
-    cover: "assets/pictures/rde.jfif",
-  },
-  {
-    nom: "Micky - Dantesque",
-    lien: "assets/music/Dantesque.mp3",
-    cover: "assets/pictures/rde.jfif",
-  },
-  {
-    nom: "Micky - Lvl up",
-    lien: "assets/music/Lvl up.mp3",
-    cover: "assets/pictures/rde.jfif",
-  },
-  {
-    nom: "Micky - Debranlax",
-    lien: "assets/music/Debranlax.mp3",
-    cover: "assets/pictures/rde.jfif",
-  },
-  {
-    nom: "Micky - Face à moi même",
-    lien: "assets/music/Face à moi même.mp3",
-    cover: "assets/pictures/rde.jfif",
-  },
-  {
-    nom: "Micky - Moonlight",
-    lien: "assets/music/Moonlight.mp3",
-    cover: "assets/pictures/rde.jfif",
-  },
-  {
-    nom: "Micky - Supernova",
-    lien: "assets/music/Supernova.mp3",
-    cover: "assets/pictures/rde.jfif",
-  },
-  {
-    nom: "Micky - APOCALYPSE (feat. Red B)",
-    lien: "assets/music/APOCALYSPE (feat. Red B).mp3",
-    cover: "assets/pictures/rde.jfif",
-  },
-  {
-    nom: "Angèle - Saiyan",
-    lien: "assets/music/Angèle - Saiyan [IA] (prod. Lnkhey).mp3",
-    cover: "assets/pictures/Angèle - Saiyan.jpg",
-  },
-  {
-    nom: "Boblennon - La chanson du Pyro-Barbare !",
-    lien: "assets/music/La chanson du Pyro-Barbare ! par Bob Lennon [FantaBobGames].mp3",
-    cover: "assets/pictures/Boblennon - La chanson du Pyro-Barbare.jpg",
-  },
-  {
-    nom: "Tonus - La Bite à Dudule",
-    lien: "assets/music/La Bite a Dudule.mp3",
-    cover: "assets/pictures/Tonus - La Bite à Dudule.jpg",
-  },
-];
 
-musiques.forEach((musique) => {
+//pour chaque musique dans musiques creer un li clickable qui change l'audio et la cover selon ce dans le li
+
+function handleAnimationEnd() {
+  bras.style.animationPlayState = "paused";
+}
+
+const config = {
+  urlCover: "assets/pictures/",
+  urlSound: "assets/music/",
+};
+
+const getData = async () => {
+  const req = await fetch("./assets/data.json");
+  console.log(req);
+  const dbmusic = await req.json();
+  console.log("result", dbmusic);
+
+  dbmusic.forEach((musique) => {
+    const liElement = document.createElement("li");
+    liElement.innerHTML = `<li id=${musique.id}><h2>${musique.nom}</h2> <img src="${config.urlCover}${musique.cover}" alt ="${musique.title}" ><div><small>${musique.artiste}</small></div></li>`;
+    playlist.appendChild(liElement);
+
+    liElement.addEventListener("click", () => {
+      audio.src = config.urlSound + musique.lien;
+      cover.src = config.urlCover + musique.cover;
+      audio.play();
+    });
+  });
+};
+
+getData();
+
+//utilisé avant pour crée liste
+/*dbmusic.forEach((musique) => {
   const liElement = document.createElement("li");
   liElement.textContent = musique.nom;
-  liElement.addEventListener("click", () => {
-    audio.src = musique.lien;
-    cover.src = musique.cover;
-  });
+  
   listmusic.appendChild(liElement);
-});
+});*/
 
+//bug mais a utiliser pour capturer le bpm de la musique
 //audioSource.connect(analyzer);
 
 btnplay.addEventListener("click", () => {
   disque.classList.toggle("pause");
+  bras.style.animation = "none"; // Réinitialisation de l'animation
+  bras.offsetHeight; // Déclenche une reflow pour réinitialiser l'animation
+  bras.style.animation = "lecture 1s";
   if (disque.classList.contains("pause")) {
     imgplay.src = "assets/pictures/bouton-jouer.png";
     audio.pause();
+
+    bras.style.animationDirection = "reverse";
+    bras.addEventListener("animationend", handleAnimationEnd);
   } else {
     imgplay.src = "assets/pictures/bouton-pause.png";
     audio.play();
+    bras.style.animationDirection = "normal";
+
+    //bug mais a utiliser pour capturer le bpm de la musique
     /*analyzer.on("change", (bpm) => {
       console.log("BPM:", bpm);
     });
@@ -95,6 +80,7 @@ btnplay.addEventListener("click", () => {
   }
 });
 
+//fais apparaitre le li playlist et disparaittre
 btnliste.addEventListener("click", () => {
   if (playlistVisible) {
     playlist.style.display = "none";

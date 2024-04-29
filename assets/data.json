@@ -1,0 +1,79 @@
+[
+    {
+    "id" : 1,
+    "artiste" : "Micky",
+    "nom": "La route des étoiles",
+    "lien": "La route des étoiles.mp3",
+    "cover": "rde.jfif"
+  },
+  {
+    "id" : 2,
+    "artiste" : "Micky",
+    "nom": "Dantesque",
+    "lien": "Dantesque.mp3",
+    "cover": "rde.jfif"
+  },
+  {
+    "id" : 3,
+    "artiste" : "Micky",
+    "nom": "Lvl up",
+    "lien": "Lvl up.mp3",
+    "cover": "rde.jfif"
+  },
+  {
+    "id" : 4,
+    "artiste" : "Micky",
+    "nom": "Debranlax",
+    "lien": "Debranlax.mp3",
+    "cover": "rde.jfif"
+  },
+  {
+    "id" : 5,
+    "artiste" : "Micky",
+    "nom": "Face à moi même",
+    "lien": "Face à moi même.mp3",
+    "cover": "rde.jfif"
+  },
+  {
+    "id" : 6,
+    "artiste" : "Micky",
+    "nom": "Moonlight",
+    "lien": "Moonlight.mp3",
+    "cover": "rde.jfif"
+  },
+  {
+    "id" : 7,
+    "artiste" : "Micky",
+    "nom": "Supernova",
+    "lien": "Supernova.mp3",
+    "cover": "rde.jfif"
+  },
+  {
+    "id" : 8,
+    "artiste" : "Micky",
+    "nom": "APOCALYPSE (feat. Red B)",
+    "lien": "APOCALYSPE (feat. Red B).mp3",
+    "cover": "rde.jfif"
+  },
+  {
+    "id" : 9,
+    "artiste" : "Angèle",
+    "nom": "Saiyan",
+    "lien": "Angèle - Saiyan [IA] (prod. Lnkhey).mp3",
+    "cover": "Angèle - Saiyan.jpg"
+  },
+  {
+    "id" : 10,
+    "artiste" : "Boblennon",
+    "nom": "La chanson du Pyro-Barbare !",
+    "lien": "La chanson du Pyro-Barbare ! par Bob Lennon [FantaBobGames].mp3",
+    "cover": "Boblennon - La chanson du Pyro-Barbare.jpg"
+  },
+  {
+    "id" : 11,
+    "artiste" : "Tonus",
+    "nom": "La Bite à Dudule",
+    "lien": "La Bite a Dudule.mp3",
+    "cover": "Tonus - La Bite à Dudule.jpg"
+  }
+]

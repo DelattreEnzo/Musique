@@ -8,6 +8,25 @@ body {
     width: 300px;
 }
 
+.bras{
+    max-width: 25%;
+    height: auto;
+    position: absolute;
+    top: -20%;
+    left: 45%;
+    transform-origin: 75.2% 46.5%;
+    transform:rotate(270deg);
+    animation: lecture 1s ;
+    animation-fill-mode: forwards;
+}
+
+.page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+
 .cover {
     width: 100px;
     height: 100px;
@@ -30,10 +49,6 @@ h1 {
     text-align: center;
 }
 
-.page {
-    display: flex;
-    justify-content: center;
-}
 
 .navigation {
     display: flex;
@@ -59,9 +74,20 @@ h1 {
     }
 }
 
+@keyframes lecture {
+    0% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(310deg);
+    }
+}
+
 .pause{
     animation-play-state: paused;
 }
+
 
 #playlist{
     display: none;

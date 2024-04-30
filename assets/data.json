@@ -1,79 +1,121 @@
 [
-    {
-    "id" : 1,
-    "artiste" : "Micky",
+  {
+    "id": 1,
+    "artiste": "Micky",
     "nom": "La route des étoiles",
     "lien": "La route des étoiles.mp3",
     "cover": "rde.jfif"
   },
   {
-    "id" : 2,
-    "artiste" : "Micky",
+    "id": 2,
+    "artiste": "Micky",
     "nom": "Dantesque",
     "lien": "Dantesque.mp3",
     "cover": "rde.jfif"
   },
   {
-    "id" : 3,
-    "artiste" : "Micky",
+    "id": 3,
+    "artiste": "Micky",
     "nom": "Lvl up",
     "lien": "Lvl up.mp3",
     "cover": "rde.jfif"
   },
   {
-    "id" : 4,
-    "artiste" : "Micky",
+    "id": 4,
+    "artiste": "Micky",
     "nom": "Debranlax",
     "lien": "Debranlax.mp3",
     "cover": "rde.jfif"
   },
   {
-    "id" : 5,
-    "artiste" : "Micky",
+    "id": 5,
+    "artiste": "Micky",
     "nom": "Face à moi même",
     "lien": "Face à moi même.mp3",
     "cover": "rde.jfif"
   },
   {
-    "id" : 6,
-    "artiste" : "Micky",
+    "id": 6,
+    "artiste": "Micky",
     "nom": "Moonlight",
     "lien": "Moonlight.mp3",
     "cover": "rde.jfif"
   },
   {
-    "id" : 7,
-    "artiste" : "Micky",
+    "id": 7,
+    "artiste": "Micky",
     "nom": "Supernova",
     "lien": "Supernova.mp3",
     "cover": "rde.jfif"
   },
   {
-    "id" : 8,
-    "artiste" : "Micky",
+    "id": 8,
+    "artiste": "Micky",
     "nom": "APOCALYPSE (feat. Red B)",
     "lien": "APOCALYSPE (feat. Red B).mp3",
     "cover": "rde.jfif"
   },
   {
-    "id" : 9,
-    "artiste" : "Angèle",
+    "id": 9,
+    "artiste": "Angèle",
     "nom": "Saiyan",
     "lien": "Angèle - Saiyan [IA] (prod. Lnkhey).mp3",
     "cover": "Angèle - Saiyan.jpg"
   },
   {
-    "id" : 10,
-    "artiste" : "Boblennon",
+    "id": 10,
+    "artiste": "Boblennon",
     "nom": "La chanson du Pyro-Barbare !",
     "lien": "La chanson du Pyro-Barbare ! par Bob Lennon [FantaBobGames].mp3",
     "cover": "Boblennon - La chanson du Pyro-Barbare.jpg"
   },
   {
-    "id" : 11,
-    "artiste" : "Tonus",
+    "id": 11,
+    "artiste": "Tonus",
     "nom": "La Bite à Dudule",
     "lien": "La Bite a Dudule.mp3",
     "cover": "Tonus - La Bite à Dudule.jpg"
+  },
+  {
+    "id": 12,
+    "artiste": "Don Choa",
+    "nom": "Dr Hannibal",
+    "lien": "Don Choa - Dr Hannibal (Clip officiel).mp3",
+    "cover": "Don choa.jpg"
+  },
+  {
+    "id": 13,
+    "artiste": "Act of Rage",
+    "nom": "The Next Level",
+    "lien": "Act of Rage & N-Vitral - The Next Level (HQ Official Video).mp3",
+    "cover": "The next level.jpg"
+  },
+  {
+    "id": 14,
+    "artiste": "Kaaris",
+    "nom": "Diarabi",
+    "lien": "Kaaris - Diarabi.mp3",
+    "cover": "Kaaris Dozo.jpg"
+  },
+  {
+    "id": 15,
+    "artiste": "Kaaris",
+    "nom": "Gun Salute",
+    "lien": "Kaaris - Gun salute.mp3",
+    "cover": "Kaaris or noir 3.jpg"
+  },
+  {
+    "id": 16,
+    "artiste": "Kaaris",
+    "nom": "Zoo",
+    "lien": "Kaaris - Zoo - Clip officiel.mp3",
+    "cover": "Kaaris or noir.jpg"
+  },
+  {
+    "id": 16,
+    "artiste": "Kaaris",
+    "nom": "Se-vrak",
+    "lien": "Kaaris - Se-vrak.mp3",
+    "cover": "Kaaris Se-vrak.jpg"
   }
 ]

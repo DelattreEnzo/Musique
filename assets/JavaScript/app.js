@@ -1,23 +1,15 @@
 const btnliste = document.getElementById("liste");
 const btncontact = document.getElementById("contact");
 const disque = document.querySelector(".disque");
-const bras = document.querySelector(".bras");
 const btnplay = document.getElementById("btnplay");
 const imgplay = document.querySelector(".play_pause");
 const audio = document.getElementById("audio");
 const cover = document.querySelector(".cover");
 const listmusic = document.querySelector(".listmusic");
 const playlist = document.getElementById("playlist");
-//bug mais a utiliser pour capturer le bpm de la musique
-//const analyzer = new Tone.Analyser("waveform");
-//const audioSource = new Tone.MediaElementSource(audio);
+const btnmoddisk = document.getElementById("moddisk");
 let playlistVisible = false;
-
-//pour chaque musique dans musiques creer un li clickable qui change l'audio et la cover selon ce dans le li
-
-function handleAnimationEnd() {
-  bras.style.animationPlayState = "paused";
-}
+let data = [];
 
 const config = {
   urlCover: "assets/pictures/",
@@ -29,54 +21,36 @@ const getData = async () => {
   console.log(req);
   const dbmusic = await req.json();
   console.log("result", dbmusic);
+  data = dbmusic;
 
   dbmusic.forEach((musique) => {
     const liElement = document.createElement("li");
-    liElement.innerHTML = `<li id=${musique.id}><h2>${musique.nom}</h2> <img src="${config.urlCover}${musique.cover}" alt ="${musique.title}" ><div><small>${musique.artiste}</small></div></li>`;
-    playlist.appendChild(liElement);
+    liElement.innerHTML = `<li id=${musique.id}><h4>${musique.nom}</h4> <img src="${config.urlCover}${musique.cover}" alt ="${musique.title}" ><div><small>${musique.artiste}</small></div></li>`;
+    listmusic.appendChild(liElement);
 
     liElement.addEventListener("click", () => {
       audio.src = config.urlSound + musique.lien;
       cover.src = config.urlCover + musique.cover;
-      audio.play();
+
+      if (disque.classList.contains("pause")) {
+        audio.pause();
+      } else {
+        audio.play();
+      }
     });
   });
 };
 
 getData();
 
-//utilisé avant pour crée liste
-/*dbmusic.forEach((musique) => {
-  const liElement = document.createElement("li");
-  liElement.textContent = musique.nom;
-  
-  listmusic.appendChild(liElement);
-});*/
-
-//bug mais a utiliser pour capturer le bpm de la musique
-//audioSource.connect(analyzer);
-
 btnplay.addEventListener("click", () => {
   disque.classList.toggle("pause");
-  bras.style.animation = "none"; // Réinitialisation de l'animation
-  bras.offsetHeight; // Déclenche une reflow pour réinitialiser l'animation
-  bras.style.animation = "lecture 1s";
   if (disque.classList.contains("pause")) {
     imgplay.src = "assets/pictures/bouton-jouer.png";
     audio.pause();
-
-    bras.style.animationDirection = "reverse";
-    bras.addEventListener("animationend", handleAnimationEnd);
   } else {
     imgplay.src = "assets/pictures/bouton-pause.png";
     audio.play();
-    bras.style.animationDirection = "normal";
-
-    //bug mais a utiliser pour capturer le bpm de la musique
-    /*analyzer.on("change", (bpm) => {
-      console.log("BPM:", bpm);
-    });
-    Tone.Transport.start();*/
   }
 });
 
@@ -89,3 +63,30 @@ btnliste.addEventListener("click", () => {
   }
   playlistVisible = !playlistVisible;
 });
+
+btncontact.addEventListener("click", () => {
+  window.location.href = "https://www.instagram.com/mickyomiel/";
+});
+
+btnmoddisk.addEventListener("click", () => {
+  const randommusique = choisirMusiqueAleatoire();
+  audio.src = config.urlSound + randommusique.lien;
+  cover.src = config.urlCover + randommusique.cover;
+
+  if (disque.classList.contains("pause")) {
+    audio.pause();
+  } else {
+    audio.play();
+  }
+});
+
+function choisirMusiqueAleatoire() {
+  if (data && data.length > 0) {
+    const indexAleatoire = Math.floor(Math.random() * data.length);
+    const musiqueAleatoire = data[indexAleatoire];
+    return musiqueAleatoire;
+  } else {
+    console.error("Aucune donnée de musique chargée ou la liste est vide.");
+    return null;
+  }
+}

@@ -17,13 +17,13 @@ const config = {
 };
 
 const getData = async () => {
-  const req = await fetch("./assets/data.json");
+  const req = await fetch("https://api-czr0.onrender.com/api/v1/music");
   console.log(req);
   const dbmusic = await req.json();
   console.log("result", dbmusic);
-  data = dbmusic;
+  data = dbmusic.result;
 
-  dbmusic.forEach((musique) => {
+  data.forEach((musique) => {
     const liElement = document.createElement("li");
     liElement.innerHTML = `<li id=${musique.id}><h4>${musique.nom}</h4> <img src="${config.urlCover}${musique.cover}" alt ="${musique.title}" ><div><small>${musique.artiste}</small></div></li>`;
     listmusic.appendChild(liElement);
